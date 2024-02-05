@@ -1,0 +1,316 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+.container{
+    display: grid;
+    height: 100%;
+    width: 100%;
+    grid-template-columns: 1.5fr 4fr 2fr;
+    grid-template-rows: 1fr 0.3fr 1fr 1fr 0.3fr 1fr 0.6fr;
+    /* grid-template-areas: "sideabar nav nav nav nav"
+    "sidebar Your_projects Your_projects Your_projects Your_projects"
+    "sidebar Your_projects Your_projects Your_projects Your_projects"
+    "sidebar Your_projects Your_projects Your_projects announcements"
+    "sidebar Your_projects Your_projects Your_projects announcements"
+    "sidebar Your_projects Your_projects Your_projects trending"
+    "sidebar Your_projects Your_projects Your_projects trending"; */
+    background-color: lightgray;
+    /* gap: 30px; */
+    
+}
+body{
+    margin: 0;
+    font-family:  'Roboto', sans-serif;
+    /* height: 100vh;
+    width: 100vw; */
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(247, 179, 77);
+    font-weight: 800;
+    font-size: larger;
+}
+
+.sidebar{
+    
+    background-color: rgb(2, 124, 172);
+    grid-row: 1/8;
+    grid-column:1/2;
+    display: grid;
+    grid-template-rows: repeat(12,1fr);
+    grid-template-columns: 1fr 1fr;
+    
+    gap: 10px 0px;
+    padding-top: 5px;
+    align-items: center;
+    justify-items: center;
+    padding-left: 10%;
+    padding-right: 10%;
+    
+}
+.sidebar>p{
+    justify-self: start;
+    font-size: large;
+    color: white;
+}
+
+/* .sidebar-content{    
+/* display: flex;
+justify-content: flex-start;
+align-items: center;
+gap: 5%;
+
+margin-left: 10%; */
+/* justify-self: end; */
+
+
+.sidebar-content>img{
+    height: 35px;
+    width: 35px;
+}
+
+.nav{
+    padding-top: 15px;
+grid-area: nav;
+background-color:white;
+grid-column-start: 2;
+grid-column-end: 4 ;
+grid-row: 1/2;
+display: grid;
+grid-template-rows: 1fr 2fr;
+padding-left: 30px;
+padding-right: 30px;
+color: black;
+row-gap: 15px;
+}
+.nav p{
+    color: black;
+    font-weight: bold;
+}
+.nav>.upper{
+    display: flex;
+    align-items: center;
+    gap: 0 20px;
+
+}
+
+.profile{
+    border-radius: 50%;
+}
+.nav>.upper>.search{
+    flex: 1;
+    background-color: lightgray;
+    opacity: 0.5;
+    align-self: stretch;
+    /* margin-left: 2%;*/
+    /* margin-right: 10%; */
+    border-radius: 20px;
+}
+
+.bolder{
+    font-size: large;
+}
+
+.nav>.lower{
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    align-items: center;
+}
+
+.nav>.lower>.lower_left{
+    display: flex;
+    gap: 0 20px;
+    align-items: center;
+    
+}
+
+.nav>.lower>.lower_left>.lower_text{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0;
+    
+}
+
+.nav>.lower>.lower_right{
+    display: flex;
+    justify-content: space-between;
+    gap: 0px 35px;
+}
+
+.nav>.lower>.lower_right>div{
+    background-color: rgb(68, 171, 255);
+    color: white;
+    padding: 10px;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: larger;
+    flex-grow: 1;
+
+}
+
+.title_card{
+    display: flex;
+    color: gray;
+    font-weight: bolder;
+    font-size: x-large;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left:50px;
+    
+}
+
+.title_card_announcement{
+    display: flex;
+    color: gray;
+    font-weight: bolder;
+    font-size: x-large;
+    justify-content: flex-start;
+    align-items: center;
+    /* padding: 10px 0px; */
+}
+.Your_projects{
+grid-area: Your_projects;
+background-color: lightgray;
+grid-row: 3/8;
+grid-column: 2/3;
+display: grid;
+grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+gap: 20px;
+column-gap: 25px;
+padding:10px 50px;
+padding-bottom: 10px;
+overflow: auto;
+
+}
+.Your_projects::-webkit-scrollbar,.Your_projects>.content_card::-webkit-scrollbar{
+    display: none;
+}
+.Your_projects>.content_card{
+    background-color: white;
+    min-height: 250px;
+    box-sizing: border-box;
+    border-left: solid 15px rgb(243, 186, 1);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    padding-left: 5px;
+    overflow: auto;
+    justify-content: space-between;    
+}
+
+
+
+.Your_projects>.content_card>p{
+    color: black;
+}
+
+.Your_projects>.content_card>.heading{
+    font-size: larger;
+    font-weight: bold;
+}
+.Your_projects>.content_card>.lower{
+    font-size: medium;
+}
+
+.Your_projects>.content_card>.images{
+    align-self: flex-end;
+    padding-right: 5px;
+}
+.Your_projects>.content_card>.images>img{
+    height: 30px;
+    width: 30px;
+
+}
+
+.announcements{
+    grid-area: announcements;
+    background-color:white;
+    grid-row: 3/5;
+    grid-column: 3/4;
+    margin-right: 15px;
+    border-radius: 15px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    
+    padding:0px 25px;
+    /* display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    padding-left: 15px;
+    align-items: center;
+    justify-items: center; */
+
+  
+
+}
+
+.announcements>.announcement_card{
+    flex:1 1 0;
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+
+}
+.announcements>.announcement_card>.upper{
+    
+    font-size: medium;
+    font-weight: bolder;
+
+}
+.announcements>.announcement_card>.lower{
+    
+    font-size: medium;
+}
+
+.announcement_card>.dash{
+    height: 3px;
+    background-color: lightgray;
+    width: 100%;
+    margin-left: 5px;
+
+}
+
+.trending{
+    grid-area: trending;
+    background-color: white;
+    grid-row: 6/8;
+    grid-column: 3/4;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-left: 10px;
+    
+}
+
+.trending>.profile{
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    
+}
+
+.trending>.profile>img{
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+   
+
+}
+
+.trending>.profile>.content>.upper{
+    font-size: large;
+    font-weight: 600;
+}
